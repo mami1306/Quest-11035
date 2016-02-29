@@ -34,7 +34,7 @@ struct npc_dragonmaw_transporterAI : public npc_escortAI
 	
 	void UpdateEscortAI(const uint32 uiDiff) override
 	{
-		if (m_started)
+		if (m_started && !m-creature->SelectHostileTarget())
 		{
 			if (m_creature->GetAreaId() == AREA_DRAGONMAW_FORTRESS)
 			{
